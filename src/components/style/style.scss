@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Anek Tamil', sans-serif;
+}
+
+
+
+body{
+    background: #D3D3D3;
+}
+.app{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-top: 50px;
+}
