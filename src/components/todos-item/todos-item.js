@@ -1,12 +1,17 @@
 import './todos-item.scss';
+import trash from '../../resources/trash.svg';
 const TodosItem = () => {
     return (
-        <li className='todos-item'>
-            <span className='todo'>Погулять</span>
-         
-                <div className='closeModal'/>
+       <>
+            <li className='todos-item'>
+                <span className='todo'>Погулять </span>
+                <img src={trash} alt="" className='img'/>
            
-        </li>
+            </li>
+            
+        
+       </>
+        
     )
 }
 export default TodosItem;

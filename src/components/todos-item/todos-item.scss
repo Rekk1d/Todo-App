@@ -1,48 +1,18 @@
-// .todos-item{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background-color: green;
-// }
+
 .todos-item{
     list-style-type: none;
     display: flex;
-    background-color: green;
+	justify-content: space-between;
+	height: 50px;
+	border-bottom: 1px solid blue;
+	margin-bottom: 30px;
 }
 .todo{
     margin-right: 20px;
-    background-color: red;
+	font-size: 22px;
 }
-.closeModal {
-	position: absolute;
-	top: 390px;
-	right: 520px;
-	width: 24px;
-	height: 24px;
-	opacity: 0.2;
+.img{
+	height: 25px;
+	width: 25px;
 	cursor: pointer;
-  transition: opacity ease 0.5s;
-
-	&:hover {
-		opacity: 1;
-	}
-}
-
-.closeModal::before,
-.closeModal::after {
-	content: '';
-	position: absolute;
-	top: 10px;
-	display: block;
-	width: 24px;
-	height: 3px;
-	background: #000;
-}
-
-.closeModal::before {
-	transform: rotate(45deg);
-}
-
-.closeModal::after {
-	transform: rotate(-45deg);
 }
