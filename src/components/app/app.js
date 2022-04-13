@@ -14,12 +14,26 @@ class App extends Component {
                 {task: 'Погулять с собакой', complete: true, id: 2},
                 {task: 'Погулять с Дашей', complete: false, id: 3},
             ]
+           
         }
+        this.maxId = 4;
     
+    }
+    addTask = (task) => {
+        const newItem = {
+            task,
+            complete: false,
+            id: this.maxId++
+        }
+        this.setState(({data}) => {
+            const newArr = [...data, newItem];
+            return {
+                data: newArr
+            }
+        })
     }
     deleteTask = (id) => {
         this.setState(({data}) => {
-            const i = data.findIndex(elem => elem.id === id)
             return {
                 data: data.filter(item => item.id !== id)
             }
@@ -30,7 +44,7 @@ class App extends Component {
             <div className="app">
                 <AppInfo/>
                 <div className="add-panel">
-                    <AddPanel/>
+                    <AddPanel addTask={this.addTask}/>
                 </div>
                 <TodosList 
                     data={this.state.data}
