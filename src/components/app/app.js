@@ -40,9 +40,16 @@ class App extends Component {
         })
     }
     render() {
+        const todos = this.state.data.length;
+        const completed = this.state.data.filter(item => item.complete).length
+        const notCompleted = this.state.data.filter(item => !item.complete).length
         return (
             <div className="app">
-                <AppInfo/>
+                <AppInfo 
+                todos={todos}
+                completed={completed}
+                notCompleted={notCompleted}
+                />
                 <div className="add-panel">
                     <AddPanel addTask={this.addTask}/>
                 </div>
