@@ -16,6 +16,9 @@
 	width: 25px;
 	cursor: pointer;
 }
+.img:not(:last-child) {
+	margin-right: 20px;
+}
 .todo.complete{
 	text-decoration: line-through;
 }

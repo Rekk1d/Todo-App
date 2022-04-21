@@ -11,7 +11,7 @@ class App extends Component {
         this.state = {
             data: [
                 {task: 'Погулять', complete: false, id: 1},
-                {task: 'Погулять с собакой', complete: true, id: 2},
+                {task: 'Погулять с собакой', complete: false, id: 2},
                 {task: 'Погулять с Дашей', complete: false, id: 3},
             ]
            
@@ -19,6 +19,7 @@ class App extends Component {
         this.maxId = 4;
     
     }
+    
     addTask = (task) => {
         const newItem = {
             task,
@@ -32,12 +33,24 @@ class App extends Component {
             }
         })
     }
+    
     deleteTask = (id) => {
         this.setState(({data}) => {
             return {
                 data: data.filter(item => item.id !== id)
             }
         })
+    }
+
+    onToggleComplete = (id) => {
+        this.setState(({data}) => ({
+            data: data.map(item => {
+                if(item.id === id) {
+                    return {...item, complete: !item.complete}
+                }
+                return item
+            })    
+        }))
     }
     render() {
         const todos = this.state.data.length;
@@ -56,6 +69,7 @@ class App extends Component {
                 <TodosList 
                     data={this.state.data}
                     onDelete={this.deleteTask}
+                    onToggleComplete={this.onToggleComplete}
                 />
             </div>
         )

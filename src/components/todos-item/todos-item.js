@@ -1,6 +1,7 @@
 import './todos-item.scss';
 import trash from '../../resources/trash.svg';
-const TodosItem = ({task, complete, onDelete}) => {
+import completed from '../../resources/complete.png'
+const TodosItem = ({task, complete, onDelete, onToggleComplete}) => {
 
     let classNames = 'todo';
     if(complete) {
@@ -10,7 +11,10 @@ const TodosItem = ({task, complete, onDelete}) => {
         
         <li className='todos-item'>
             <span className={classNames}>{task}</span>
-            <img src={trash} alt="" className='img' onClick={onDelete}/>
+            <div>
+                <img src={completed} alt="completed" className='img' onClick={onToggleComplete} data-toggle="complete"/>
+                <img src={trash} alt="" className='img' onClick={onDelete}/>
+            </div>
         </li>     
     )
 }
